@@ -28,9 +28,12 @@ extensions = [
     'sphinx.ext.autodoc']
 
 autoapi_type = 'python'
-autoapi_dirs = ['../../src']
+autoapi_dirs = ['../../windwatts_data']
 
 html_theme = 'alabaster'
+
+# -- Options for EPUB output
+epub_show_urls = 'footnote'
 
 html_context = {
     "display_github": True, # Integrate GitHub
