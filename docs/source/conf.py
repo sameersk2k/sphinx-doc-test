@@ -10,7 +10,6 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath('../..'))
-sys.path.insert(0, os.path.abspath('../../windwatts_data'))
 
 project = 'windwatts_data'
 copyright = '2025, National Renewable Energy Laboratory (USA)'
@@ -28,7 +27,7 @@ extensions = [
     'sphinx.ext.autodoc']
 
 autoapi_type = 'python'
-autoapi_dirs = ['../../windwatts_data']
+autoapi_dirs = ['../..']
 
 html_theme = 'alabaster'
 

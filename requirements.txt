@@ -1,0 +1,6 @@
+boto3
+pandas
+botocore
+scipy
+numpy
+geopandas
