@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="English" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Classes &#8212; windwatts_data 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=80cc54d1"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Data" href="data.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h1>
+<p>Depending on the data on which the user wants to work with. Users can use different classes within the package.
+Currently the package has 1 class:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#wtkledclient1224"><span class="std std-ref">WTKLedClient1224</span></a></p></li>
+</ol>
+<section id="wtkledclient1224">
+<span id="id1"></span><h2>WTKLedClient1224<a class="headerlink" href="#wtkledclient1224" title="Link to this heading">¶</a></h2>
+<p>This class provides functionality for working with hourly average time-series data from WTK-LED called as WTK-LED 1224. The dataset is organized such that,
+for a specific location and year, it contains 288 rows. Each row represents the hourly average values for a particular hour of the day across
+each month (12 months * 24 hours = 288 rows per file).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="windwatts_data.wtk_client_1224.WTKLedClient1224.get_1224_data">
+<span class="sig-name descname"><span class="pre">get_1224_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">years</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_nearest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'downloads'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#windwatts_data.wtk_client_1224.WTKLedClient1224.get_1224_data" title="Link to this definition">¶</a></dt>
+<dd><p>Download CSV.GZ files containing timeseries data at specific location(s) for specific year(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>years</strong> (<em>list</em><em>[</em><em>int</em><em>] or </em><em>None</em>) -- List of years (e.g., [2001, 2002]) for which data should be downloaded.(Required)</p></li>
+<li><p><strong>lat</strong> (<em>float</em><em> or </em><em>None</em>) -- Latitude of the target location.(Required)</p></li>
+<li><p><strong>long</strong> (<em>float</em><em> or </em><em>None</em>) -- Longitude of the target location.(Required)</p></li>
+<li><p><strong>n_nearest</strong> (<em>int</em>) -- Number of nearest locations to include in the download. Must be between 1 and 16. Default is 1.(Optional)</p></li>
+<li><p><strong>varset</strong> (<em>str</em>) -- Variable set to filter the data. Default is 'all'.(Takes only default value for now)</p></li>
+<li><p><strong>local_dir</strong> (<em>str</em>) -- Local directory to save the downloaded files. Default is 'downloads'.(Optional)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> -- If <cite>lat</cite> or <cite>long</cite> or <cite>years</cite> is None.</p></li>
+<li><p><strong>ValueError</strong> -- If <cite>years</cite> is not a list of integers, if <cite>lat</cite> or <cite>long</cite> are not valid numbers, 
+or if <cite>n_nearest</cite> is not between 1 and 16.</p></li>
+<li><p><strong>RuntimeError</strong> -- If the local directory cannot be created or if the nearest location(s) cannot be determined.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of file paths for the successfully downloaded files.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="windwatts_data.wtk_client_1224.WTKLedClient1224.fetch_windspeed_timeseries_1224">
+<span class="sig-name descname"><span class="pre">fetch_windspeed_timeseries_1224</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">years</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_nearest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#windwatts_data.wtk_client_1224.WTKLedClient1224.fetch_windspeed_timeseries_1224" title="Link to this definition">¶</a></dt>
+<dd><p>Fetch windspeed and wind direction time series for a given latitude, longitude, and height(s).
+Optionally, filter the data by specific year(s) and fetch data for the nearest location(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> (<em>float</em>) -- Latitude of the target location. This parameter is required.</p></li>
+<li><p><strong>long</strong> (<em>float</em>) -- Longitude of the target location. This parameter is required.</p></li>
+<li><p><strong>heights</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) -- List of heights (e.g., [10.0, 50.0]) for which wind data should be retrieved. This parameter is required.</p></li>
+<li><p><strong>years</strong> (<em>list</em><em>[</em><em>int</em><em>] or </em><em>None</em>) -- List of years (e.g., [2001, 2002]) to filter the data. This parameter is optional.</p></li>
+<li><p><strong>n_nearest</strong> (<em>int</em>) -- Number of nearest locations to include in the query. Must be between 1 and 16. Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A pandas DataFrame containing windspeed and wind direction time series data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">windwatts_data</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#wtkledclient1224">WTKLedClient1224</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windwatts_data.wtk_client_1224.WTKLedClient1224.get_1224_data"><code class="docutils literal notranslate"><span class="pre">get_1224_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windwatts_data.wtk_client_1224.WTKLedClient1224.fetch_windspeed_timeseries_1224"><code class="docutils literal notranslate"><span class="pre">fetch_windspeed_timeseries_1224()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="data.html" title="previous chapter">Data</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, National Renewable Energy Laboratory (USA).
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/classes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
