@@ -37,7 +37,6 @@ jobs:
       - name: Init new repo in dist folder and commit generated files
         run: |
           cd docs/build/html/
-          git config --global --add safe.directory /home/runner/work/sphinx-doc-test/sphinx-doc-test/docs/build/html/
           git init
           touch .nojekyll
           git add -A
@@ -49,6 +48,6 @@ jobs:
         uses: ad-m/github-push-action@v0.5.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          branch: gh-pages
           force: true
           directory: ./docs/build/html
